@@ -29,5 +29,9 @@ namespace CleanerRobot
             get => _y;
             set => _y= ValidateAndGetValue(value);
         }
+
+       
+
+
     }
 }

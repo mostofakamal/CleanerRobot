@@ -50,6 +50,7 @@
     <Compile Include="IRobotInputProcessor.cs" />
     <Compile Include="IRobotPositioningContext.cs" />
     <Compile Include="PositionBoundary.cs" />
+    <Compile Include="PositionComparer.cs" />
     <Compile Include="RobotCommandProvider.cs" />
     <Compile Include="RobotInput.cs" />
     <Compile Include="MoveEastCommand.cs" />

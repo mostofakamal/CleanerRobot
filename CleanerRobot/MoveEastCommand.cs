@@ -6,9 +6,9 @@
         {
 
         }
-        protected override void AdjustPositionForSingleStep(Position position)
+        protected override Position AdjustPositionForSingleStep(Position position)
         {
-            position.X++;
+            return new Position(++position.X, position.Y);
         }
     }
 }

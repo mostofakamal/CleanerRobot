@@ -27,15 +27,15 @@ namespace CleanerRobot
                 this._noOfSteps = steps;
             }
         }
-        protected abstract void AdjustPositionForSingleStep(Position position);
+        protected abstract Position AdjustPositionForSingleStep(Position position);
 
         public void Execute()
         {
             var position = GetCurrentPosition();
             for (var i = 0; i < _noOfSteps; i++)
             {
-                AdjustPositionForSingleStep(position);
-                RobotPositioningContext.AddPosition(position);
+                var newPosition= AdjustPositionForSingleStep(position);
+                RobotPositioningContext.AddPosition(newPosition);
             }
         }
 

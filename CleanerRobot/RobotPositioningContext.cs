@@ -5,20 +5,20 @@ namespace CleanerRobot
 {
     public class RobotPositioningContext : IRobotPositioningContext
     {
-        private readonly HashSet<KeyValuePair<int, int>> _vertices = new HashSet<KeyValuePair<int, int>>();
+        private readonly List<Position> _vertices = new List<Position>();
         public void AddPosition(Position position)
         {
-            _vertices.Add(new KeyValuePair<int, int>(position.X, position.Y));
+            _vertices.Add(position);
         }
 
         public Position GetCurrentPosition()
         {
-            return _vertices.Select(x => new Position(x.Key, x.Value)).LastOrDefault();
+            return _vertices.LastOrDefault();
         }
 
         public int GetPositionCount()
         {
-            return  _vertices.Count;
+            return _vertices.Distinct(new PositionComparer()).Count();
         }
     }
 }
